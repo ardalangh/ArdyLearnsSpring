@@ -1,12 +1,14 @@
 package com.ardyspringpractice.restfulwebservices.filtering;
 
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 //@JsonIgnoreProperties({"value1","value2"})
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
-    @JsonIgnore
+//    @JsonIgnore
     private String value1;
     private String value2;
     private String value3;
