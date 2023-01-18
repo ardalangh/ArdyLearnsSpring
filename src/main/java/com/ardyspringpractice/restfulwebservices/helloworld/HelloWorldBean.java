@@ -1,4 +1,4 @@
-package com.ardyspringpractice.restfulwebservices;
+package com.ardyspringpractice.restfulwebservices.helloworld;
 
 public class HelloWorldBean {
     private String msg;
