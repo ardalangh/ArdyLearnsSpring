@@ -1,4 +1,4 @@
-package com.ardyspringpractice.restfulwebservices.helloworld;
+package com.ardyspringpractice.restfulwebservices;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package user;
+package com.ardyspringpractice.restfulwebservices.user;
 
 import java.time.LocalDate;
 
