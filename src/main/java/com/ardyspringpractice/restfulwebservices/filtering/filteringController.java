@@ -26,7 +26,7 @@ public class filteringController {
     public MappingJacksonValue filteringList() {
         List<SomeBean> someBeanArray = Arrays.asList(new SomeBean("value1", "value2", "value3"), new SomeBean("value1", "value2", "value3"), new SomeBean("value1", "value2", "value3"));
         MappingJacksonValue mappingJacksonValue = new MappingJacksonValue(someBeanArray);
-        SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept(new String[]{"value3", "value2"});
+        SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept("value3", "value2");
         FilterProvider filters = new SimpleFilterProvider().addFilter("SomeBeanFilter", filter);
         mappingJacksonValue.setFilters(filters);
         return mappingJacksonValue;
