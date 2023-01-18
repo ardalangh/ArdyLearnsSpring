@@ -1,8 +1,6 @@
 package com.ardyspringpractice.restfulwebservices.user;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,6 +13,7 @@ public class UserResource {
         this.service = service;
     }
 
+
     @GetMapping(path = "/users")
     public List<User> getAllUsers() {
         return service.findAll();
@@ -24,4 +23,10 @@ public class UserResource {
     public User getAllUsers(@PathVariable int userId) {
         return service.findOne(userId);
     }
+
+    @PostMapping(path = "/users")
+    public void createUser(@RequestBody User user) {
+        service.save(user);
+    }
+
 }
