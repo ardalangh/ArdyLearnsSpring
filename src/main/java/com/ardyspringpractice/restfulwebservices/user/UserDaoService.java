@@ -21,22 +21,22 @@ public class UserDaoService {
     }
 
 
-    List<User> findAll() {
+    public List<User> findAll() {
         return users;
     }
 
-    User findOne(int id) {
+    public User findOne(int id) {
         Predicate<? super User> predicate = user -> user.getId().equals(id);
         return users.stream().filter(predicate).findFirst().orElse(null);
     }
 
-    User save(User user) {
+    public User save(User user) {
         user.setId(++usersCount);
         users.add(user);
         return user;
     }
 
-    void deleteById(int id) {
+    public void deleteById(int id) {
         Predicate<? super User> predicate = user -> user.getId().equals(id);
         users.removeIf(predicate);
     }
