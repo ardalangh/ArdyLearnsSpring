@@ -1,5 +1,6 @@
 package com.ardyspringpractice.restfulwebservices.jpa;
 
+import com.ardyspringpractice.restfulwebservices.user.Post;
 import com.ardyspringpractice.restfulwebservices.user.User;
 import com.ardyspringpractice.restfulwebservices.user.UserNotFoundException;
 import jakarta.validation.Valid;
@@ -47,6 +48,14 @@ public class UserJpaResource {
     @DeleteMapping(path = "jpa/users/{userId}")
     public void deleteUser(@PathVariable int userId) {
         repository.deleteById(userId);
+    }
+
+    @GetMapping(path = "jpa/users/{userId}/posts")
+    public List<Post> getPostsForUser(@PathVariable int userId) {
+        Optional<User> user = repository.findById(userId);
+        if (user.isEmpty())
+            throw new UserNotFoundException("id: " + userId);
+        return user.get().getPosts();
     }
 
     @PostMapping(path = "jpa/users")

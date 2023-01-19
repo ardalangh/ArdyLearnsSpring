@@ -52,6 +52,10 @@ public class User {
         this.birthDate = birthDate;
     }
 
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -64,6 +68,9 @@ public class User {
         return birthDate;
     }
 
+    public List<Post> getPosts() {
+        return posts;
+    }
 
     @Override
     public String toString() {
